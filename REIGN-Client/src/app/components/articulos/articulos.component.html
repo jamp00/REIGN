@@ -1,0 +1,36 @@
+
+<mat-accordion #acordion *ngFor="let articulo of articulos" >
+
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title *ngIf="articulo.title != null" >
+                {{ articulo.title }}
+            </mat-panel-title>
+            <mat-panel-title *ngIf="articulo.story_title != null" >
+                {{ articulo.story_title }}
+            </mat-panel-title>
+            <mat-panel-description>
+                - {{ articulo.author }} -
+            </mat-panel-description>
+            <mat-icon aria-hidden="false" aria-label="home icon" (click)="Eliminar(articulo)">delete</mat-icon>
+
+        <ng-container >
+<!--            {{ articulo.created_at }}
+            <span ng-non-bindable>{{articulo.created_at | date:"mediumTime"}}</span>
+ -->
+            <span ng-non-bindable>{{articulo.created_at | niceDateFormatPipe}}</span>
+        </ng-container>
+<!--        {{ articulo._id }}-->
+        </mat-expansion-panel-header>
+
+
+        <a href="{{articulo.story_url}}" target="_blank" *ngIf="articulo.story_url != null" >{{ articulo.story_url }} </a>
+        <a href="{{articulo.story_url}}" target="_blank" *ngIf="articulo.url != null" >{{ articulo.url }} </a>
+    </mat-expansion-panel>
+
+</mat-accordion>
+
+
+
+

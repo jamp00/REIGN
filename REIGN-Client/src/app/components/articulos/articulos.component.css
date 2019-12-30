@@ -1,0 +1,36 @@
+mat-accordion  {
+    margin: auto;
+    width: 80%;
+    display: block;
+}
+
+mat-expansion-panel{
+    background-color: #fff;
+    border: 1px #ccc;
+    color: #333;
+    font-size: 13pt;
+}
+
+
+mat-expansion-panel:hover{
+    background-color: #fafafa;   
+}
+
+mat-expansion-panel:hover mat-icon{
+    visibility: visible;
+}
+
+mat-panel-title {
+    border: 1px #ccc;
+    color: #333;
+    font-size: 13pt;   
+}
+
+mat-panel-description{
+    color: #999;
+}
+
+
+mat-icon{
+    visibility: hidden;
+}
